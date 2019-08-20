@@ -1,4 +1,4 @@
-from emingora.pom.analyser import GAV
+from emingora.pom.analyser.entity import GAV
 
 
 class Pom:

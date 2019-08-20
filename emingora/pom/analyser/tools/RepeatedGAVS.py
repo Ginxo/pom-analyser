@@ -1,4 +1,4 @@
-from emingora.pom.analyser.Pom import Pom
+from emingora.pom.analyser.entity.Pom import Pom
 from emingora.pom.analyser.utils.GAVUtils import GAVUtils
 
 

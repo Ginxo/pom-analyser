@@ -1,4 +1,4 @@
-from emingora.pom.analyser.GAV import GAV
+from emingora.pom.analyser.entity.GAV import GAV
 
 
 class GAVUtils:

@@ -5,8 +5,8 @@
 import os
 from xml.etree import ElementTree
 
-from emingora.pom.analyser.GAV import GAV
-from emingora.pom.analyser.Pom import Pom
+from emingora.pom.analyser.entity.GAV import GAV
+from emingora.pom.analyser.entity.Pom import Pom
 
 XMLNS = 'xmlns'
 POM_XMLNS = 'http://maven.apache.org/POM/4.0.0'

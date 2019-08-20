@@ -1,5 +1,5 @@
-from emingora.pom.analyser import GAV
-from emingora.pom.analyser.Pom import Pom
+from emingora.pom.analyser.entity import GAV
+from emingora.pom.analyser.entity.Pom import Pom
 
 
 class PomBuilder:

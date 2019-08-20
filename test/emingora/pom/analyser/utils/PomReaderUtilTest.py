@@ -1,6 +1,6 @@
 import unittest
 
-from emingora.pom.analyser.GAV import GAV
+from emingora.pom.analyser.entity.GAV import GAV
 from emingora.pom.analyser.utils.PomReaderUtil import PomReaderUtil
 
 
