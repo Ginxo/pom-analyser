@@ -1,7 +1,3 @@
-#
-# parsing maven pom.xml
-# artifactId & version
-#
 import os
 from xml.etree import ElementTree
 
