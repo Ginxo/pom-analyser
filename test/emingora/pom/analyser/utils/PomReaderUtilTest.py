@@ -32,7 +32,7 @@ class PomReaderUtilTest(unittest.TestCase):
 
         # Assert
         PomReaderUtilTest.check_gav(self, pom.gav, GAV, "io.missus.message-service", "api", "0.0.1-SNAPSHOT")
-        PomReaderUtilTest.check_gav(self, pom.parent, GAV, "io.missus.message-service", "parent", "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.parent.gav, GAV, "io.missus.message-service", "parent", "0.0.1-SNAPSHOT")
 
         self.assertEqual(3, len(pom.dependencies))
         PomReaderUtilTest.check_gav(self, pom.dependencies[0], GAV, "org.springframework", "spring-web")
@@ -53,7 +53,7 @@ class PomReaderUtilTest(unittest.TestCase):
 
         # Assert
         PomReaderUtilTest.check_gav(self, pom.gav, GAV, "io.missus.message-service", "parent", "0.0.1-SNAPSHOT")
-        PomReaderUtilTest.check_gav(self, pom.parent, GAV, "org.springframework.boot", "spring-boot-starter-parent",
+        PomReaderUtilTest.check_gav(self, pom.parent.gav, GAV, "org.springframework.boot", "spring-boot-starter-parent",
                                     "2.1.2.RELEASE")
 
         self.assertEqual(None, pom.dependencies)
@@ -62,35 +62,45 @@ class PomReaderUtilTest(unittest.TestCase):
         self.assertEqual(2, len(pom.children))
 
         # Check children 0
-        PomReaderUtilTest.check_gav(self, pom.children[0].gav, GAV, "io.missus.message-service", "core", "0.0.1-SNAPSHOT")
-        PomReaderUtilTest.check_gav(self, pom.children[0].parent, GAV, "io.missus.message-service", "parent", "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[0].gav, GAV, "io.missus.message-service", "core",
+                                    "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[0].parent.gav, GAV, "io.missus.message-service", "parent",
+                                    "0.0.1-SNAPSHOT")
 
         self.assertEqual(None, pom.children[0].dependencies)
         self.assertEqual(None, pom.children[0].dependencies_management)
         self.assertEqual(2, len(pom.children[0].children))
+        self.assertIs(pom, pom.children[0].parent)
 
         # Check Children 0 - 0
         print(pom.children[0].children[0])
-        PomReaderUtilTest.check_gav(self, pom.children[0].children[0].gav, GAV, "io.missus.message-service", "core-core", "0.0.1-SNAPSHOT")
-        PomReaderUtilTest.check_gav(self, pom.children[0].children[0].parent, GAV, "io.missus.message-service", "core", "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[0].children[0].gav, GAV, "io.missus.message-service",
+                                    "core-core", "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[0].children[0].parent.gav, GAV, "io.missus.message-service",
+                                    "core", "0.0.1-SNAPSHOT")
 
         self.assertEqual(15, len(pom.children[0].children[0].dependencies))
         self.assertEqual(None, pom.children[0].children[0].dependencies_management)
         self.assertEqual(None, pom.children[0].children[0].children)
+        self.assertIs(pom.children[0], pom.children[0].children[0].parent)
 
         # Check Children 0 - 1
         print(pom.children[0].children[1])
-        PomReaderUtilTest.check_gav(self, pom.children[0].children[1].gav, GAV, "io.missus.message-service", "core-api", "0.0.1-SNAPSHOT")
-        PomReaderUtilTest.check_gav(self, pom.children[0].children[1].parent, GAV, "io.missus.message-service", "core", "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[0].children[1].gav, GAV, "io.missus.message-service", "core-api",
+                                    "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[0].children[1].parent.gav, GAV, "io.missus.message-service",
+                                    "core", "0.0.1-SNAPSHOT")
 
         self.assertEqual(3, len(pom.children[0].children[1].dependencies))
         self.assertEqual(None, pom.children[0].children[1].dependencies_management)
         self.assertEqual(None, pom.children[0].children[1].children)
-
+        self.assertIs(pom.children[0], pom.children[0].children[1].parent)
 
         # Check children 1
-        PomReaderUtilTest.check_gav(self, pom.children[1].gav, GAV, "io.missus.message-service", "api", "0.0.1-SNAPSHOT")
-        PomReaderUtilTest.check_gav(self, pom.children[1].parent, GAV, "io.missus.message-service", "parent", "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[1].gav, GAV, "io.missus.message-service", "api",
+                                    "0.0.1-SNAPSHOT")
+        PomReaderUtilTest.check_gav(self, pom.children[1].parent.gav, GAV, "io.missus.message-service", "parent",
+                                    "0.0.1-SNAPSHOT")
 
         self.assertEqual(3, len(pom.children[1].dependencies))
         PomReaderUtilTest.check_gav(self, pom.children[1].dependencies[0], GAV, "org.springframework", "spring-web")
@@ -98,7 +108,7 @@ class PomReaderUtilTest(unittest.TestCase):
         PomReaderUtilTest.check_gav(self, pom.children[1].dependencies[2], GAV, "org.projectlombok", "lombok")
         self.assertEqual(None, pom.children[1].dependencies_management)
         self.assertEqual(None, pom.children[1].children)
-
+        self.assertIs(pom, pom.children[1].parent)
 
     @staticmethod
     def check_gav(self, gav: GAV, instance_type, group_id: str, artifact_id: str, version: str = None,

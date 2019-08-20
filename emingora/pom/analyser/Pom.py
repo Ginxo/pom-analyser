@@ -11,4 +11,4 @@ class Pom:
         self.children = children
 
     def __repr__(self):
-        return "GAV:{0}\nDEPENDENCIES:{1}\nDEPENDENCY_MANAGEMENT:{2}\nPARENT:{3}\nCHILDREN:{4}".format(self.gav, self.dependencies, self.dependencies_management, self.parent, self.children)
+        return "GAV:{0}\nDEPENDENCIES:{1}\nDEPENDENCY_MANAGEMENT:{2}\nPARENT:{3}\nCHILDREN:{4}\n".format(self.gav, self.dependencies, self.dependencies_management, self.parent, self.children)

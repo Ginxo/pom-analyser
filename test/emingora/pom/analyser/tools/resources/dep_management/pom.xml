@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jboss</groupId>
+        <artifactId>jboss-parent</artifactId>
+        <!-- Keep in sync with jboss-parent version in kie-user-bom-parent/pom.xml -->
+        <version>31</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>org.test</groupId>
+    <artifactId>test-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <modules>
+        <module>child1</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>group1</groupId>
+                <artifactId>artifact1</artifactId>
+                <version>1</version>
+            </dependency>
+            <dependency>
+                <groupId>group3</groupId>
+                <artifactId>artifact3</artifactId>
+                <version>3</version>
+            </dependency>
+            <dependency>
+                <groupId>group4</groupId>
+                <artifactId>artifact4</artifactId>
+                <version>4</version>
+            </dependency>
+            <dependency>
+                <groupId>group7</groupId>
+                <artifactId>artifact7</artifactId>
+                <version>7</version>
+            </dependency>
+            <dependency>
+                <groupId>group8</groupId>
+                <artifactId>artifact8</artifactId>
+                <version>8</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>group2</groupId>
+            <artifactId>artifact2</artifactId>
+            <version>2</version>
+        </dependency>
+        <dependency>
+            <groupId>group5</groupId>
+            <artifactId>artifact5</artifactId>
+            <version>5</version>
+        </dependency>
+        <dependency>
+            <groupId>group8</groupId>
+            <artifactId>artifact8</artifactId>
+            <version>8</version>
+        </dependency>
+    </dependencies>
+
+</project>
