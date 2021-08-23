@@ -280,7 +280,7 @@
     </version.org.jpmml.model> <!-- jpmml-model BSD 3C license - ATTENTION 1.4.11 intentional, because 1.4.9 evaluators depend on 1.4.11 -->
     <version.org.jruby>1.7.2</version.org.jruby>
     <version.org.json>20090211</version.org.json>
-    <version.org.jsoup>1.8.3</version.org.jsoup>
+    <version.org.jsoup>1.14.2</version.org.jsoup>
     <version.org.jvnet.mock-javamail>1.9</version.org.jvnet.mock-javamail>
     <version.org.keycloak>4.8.3.Final</version.org.keycloak>
     <version.org.littleshoot.littleproxy>0.5.3</version.org.littleshoot.littleproxy>
