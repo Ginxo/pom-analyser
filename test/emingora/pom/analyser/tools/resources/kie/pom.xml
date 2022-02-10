@@ -203,7 +203,7 @@
     <version.org.eclipse.jgit>5.0.2.201807311906-r</version.org.eclipse.jgit>
     <version.org.eclipse.sisu>0.3.2</version.org.eclipse.sisu>
     <version.org.glassfish>3.1.2</version.org.glassfish>
-    <version.org.hibernate>5.3.7.Final</version.org.hibernate>
+    <version.org.hibernate>5.4.24.Final</version.org.hibernate>
     <version.org.hibernate.search>5.10.3.Final</version.org.hibernate.search>
     <version.org.hibernate.validator>6.0.13.Final</version.org.hibernate.validator>
     <version.org.hibernate.commons.annotations>5.0.4.Final</version.org.hibernate.commons.annotations>
