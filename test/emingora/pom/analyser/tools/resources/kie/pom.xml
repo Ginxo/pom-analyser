@@ -382,7 +382,7 @@
     <version.org.jboss.remotingjmx>3.0.0.Final</version.org.jboss.remotingjmx>
     <version.org.jboss.resteasy.async>3.0.19.Final</version.org.jboss.resteasy.async>
     <!-- Required by jboss-remoting version above -->
-    <version.org.wildfly.security>1.1.0.Final</version.org.wildfly.security>
+    <version.org.wildfly.security>1.15.15.Final</version.org.wildfly.security>
     <version.org.mortbay.jetty.runner>8.1.7.v20120910</version.org.mortbay.jetty.runner>
     <version.org.ow2.asm>5.0.4</version.org.ow2.asm>
     <version.org.picketlink>2.6.0.Final</version.org.picketlink>
